@@ -1,0 +1,14 @@
+{
+  "email": {
+    "label": "Email",
+    "placeholder": "jackson@mail.com",
+    "type": "email",
+    "instructions": ""
+  },
+  "password": {
+    "label": "Password",
+    "placeholder": "********",
+    "type": "password",
+    "instructions": ""
+  }
+}

@@ -1,0 +1,64 @@
+@import "../_base/variable.scss";
+.page-wrapper {
+  position: relative;
+  width: 100%;
+
+  .page-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: $color-main-light;
+    .page-container {
+      position: relative;
+      top: 32px;
+      display: flex;
+      flex-direction: column;
+      div {
+        width: 90%;
+        padding: 16px;
+        align-self: center;
+        text-align: center;
+        h1 {
+          max-width: 465px;
+        }
+        p {
+          padding-top: 24px;
+          text-align: justify;
+          max-width: 354px;
+        }
+        img {
+          max-width: 456px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 920px) {
+  .page-wrapper {
+    position: absolute;
+    height: 100vh;
+    background-color: $color-main;
+    .page-inner {
+      width: 90%;
+      height: 90vh;
+      margin: auto;
+      max-width: 1293px;
+      top: 32px;
+      .page-container {
+        padding: 0 104px;
+        flex-direction: row-reverse;
+        position: relative;
+        top: 20vh;
+        div {
+          text-align: left;
+        }
+        p {
+          max-width: 465px;
+          position: relative;
+          left: 48px;
+          padding: 24px 0;
+        }
+      }
+    }
+  }
+}

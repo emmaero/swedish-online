@@ -1,0 +1,26 @@
+{
+  "name":{
+    "label": "Name",
+    "placeholder": "Jackson Ryce",
+    "type": "text",
+    "instructions": ""
+  },
+  "city":{
+    "label": "City",
+    "placeholder": "halmstad",
+    "type": "text",
+    "instructions": ""
+  },
+  "email":{
+    "label": "Email",
+    "placeholder": "jackson@mail.com",
+    "type": "email",
+    "instructions": ""
+  },
+  "password":{
+    "label": "Password",
+    "placeholder": "********",
+    "type": "password",
+    "instructions": ""
+  }
+}

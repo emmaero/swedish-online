@@ -1,0 +1,52 @@
+import React, { FormEvent, useState } from 'react'
+import fields from "../data/field-login.json";
+import { signIn } from '../scripts/authentification';
+import { getDocument } from '../scripts/firestore';
+import {useUser } from '../states/UserProvider';
+import {useHistory } from "react-router-dom";
+import InputField from './InputField';
+import { useAuth } from '../states/AuthProvider';
+export default function FormLogin() {
+  // Global state
+  //@ts-ignore
+  const { setUser } = useUser();
+  //@ts-ignore
+  const { setIsLogged, isLogged } = useAuth();
+
+  const history = useHistory();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  // Methods
+  async function onSubmit(event: FormEvent) {
+    event.preventDefault();
+    setErrorMessage("");
+    const account = await signIn(email, password);
+ console.log("Login server ", account.isLogged);
+    account.isLogged ? onSuccess(account.payload) : onFailure(account.payload);
+  }
+  async function onSuccess(uid: string) {
+    const document = await getDocument("users", uid);
+
+    setUser(document);
+      setIsLogged(true);
+      console.log("Login setLogged", isLogged)
+    history.push("/");
+  }
+  function onFailure(message: string) {
+    setErrorMessage(message);
+  }
+  return (
+    <form onSubmit={onSubmit}>
+      <InputField state={[email, setEmail]} options={fields.email} />
+      <InputField state={[password, setPassword]} options={fields.password} />
+      <p>{errorMessage}</p>
+      <div className="button-container">
+        <button type="submit" className="btn button-secondary">
+          Login
+        </button>
+      </div>
+    </form>
+  );
+}

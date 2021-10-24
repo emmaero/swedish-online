@@ -1,0 +1,30 @@
+@import "../_base/variable.scss";
+form {
+  background-color: $color-white;
+  max-width: 600px;
+  margin: auto;
+  padding: 16px;
+  input {
+    display: inline-block;
+    margin: $space-small 0;
+    width: 95%;
+    height: 44px;
+    border: none;
+    padding: 8px;
+    background-color: $color-main-light;
+    border-radius: 10px;
+  }
+  .input-field {
+    border: none !important;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+  }
+}
+@media (min-width: 920px) {
+  form {
+    padding: 70px;
+  }
+}

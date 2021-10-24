@@ -1,0 +1,31 @@
+@import "../_base/variable.scss";
+h1 {
+  font-size: $font-heading-1-mobile;
+}
+
+h2 {
+  font-size: $font-heading-2-mobile;
+}
+h3 {
+  font-size: $font-heading-3-mobile;
+}
+p {
+  font-size: 17px;
+  line-height: 150%;
+}
+@media (min-width: 920px) {
+  h1 {
+    font-size: $font-heading-1-tablet;
+  }
+  h2 {
+    font-size: $font-heading-2-desktop;
+  }
+}
+@media (min-width: 1112px) {
+  h1 {
+    font-size: $font-heading-1-desktop;
+  }
+  h2 {
+    font-size: $font-heading-2-desktop;
+  }
+}

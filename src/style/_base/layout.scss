@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  background-color: var(--color-white);
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+
+  img {
+    width: 100%;
+  }
+}
+@media (min-width: 920px) {
+  .container-inner {
+    width: 80%;
+  }
+}
+
+.App {
+  font-family: var(--font-family);
+  width: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.row {
+  max-width: 1120px;
+  padding: var(--space-medium);
+  width: 100%;
+  margin: auto;
+}
