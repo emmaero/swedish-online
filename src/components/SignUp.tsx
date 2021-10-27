@@ -5,11 +5,11 @@ import { createAccount } from "../scripts/authentification";
 import { createDocumentWithId } from "../scripts/firestore";
 import { useUser } from "../states/UserProvider";
 import { useAuth } from "../states/AuthProvider";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 export default function SignUp() {
   // Global state
-    const { setUser } = useUser();
+  const { setUser } = useUser();
   const { setIsLogged } = useAuth();
   const history = useHistory();
   // Local state
@@ -18,6 +18,7 @@ export default function SignUp() {
   const [city, setCity] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   // Methods
   async function onSubmit(event: FormEvent) {
     event.preventDefault();
@@ -27,14 +28,17 @@ export default function SignUp() {
     account.isCreated ? onAddItem(account.payload) : onFailure(account.payload);
   }
   async function onAddItem(uid: string) {
-    const newUser= {
+    const newUser = {
       name: name,
       email: email,
-      city: city
+      city: city,
+      isTeacher: false,
     };
+    setLoading(true);
     await createDocumentWithId("users", uid, newUser);
     setUser(newUser);
     setIsLogged(true);
+    setLoading(false);
     history.push("/");
   }
   function onFailure(message: string) {
@@ -52,6 +56,10 @@ export default function SignUp() {
           Sign up
         </button>
       </div>
+      <br />
+      <Link className="button-link blue" to="/login">
+        Log me in
+      </Link>
     </form>
   );
 }

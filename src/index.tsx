@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from './states/AuthProvider';
+import { CourseProvider } from './states/CourseProvider';
 import { UserProvider } from './states/UserProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <UserProvider>
+        <CourseProvider>
         <App />
+        </CourseProvider>
       </UserProvider>
     </AuthProvider>
   </React.StrictMode>,

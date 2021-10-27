@@ -1,17 +1,16 @@
-import React from 'react'
-import { Route } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useUser } from "../states/UserProvider";
+import StudentRoute from "./StudentRoute";
+import TeacherRoute from "./TeacherRoute";
 
-import LoginPage from '../pages/LoginPage';
-import SignUpPage from '../pages/SignUpPage';
-import StudentPage from '../pages/StudentPage';
-
+interface iProp {
+  isTeacher: boolean;
+}
 export default function Logged() {
-    return (
-      <>
-        
-        <Route component={StudentPage} path="/" />
-        <Route component={LoginPage} path="/login" />
-        <Route component={SignUpPage} path="/sign-up" />
-      </>
-    );
+    const [isTeacher, setIsTeacher] = useState(false);
+  const { user } = useUser();
+  useEffect(() => {
+    if (user && user.isTeacher) setIsTeacher(true);
+  }, [user]);
+  return <>{isTeacher ? <TeacherRoute /> : <StudentRoute />}</>;
 }
