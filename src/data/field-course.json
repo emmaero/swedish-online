@@ -1,0 +1,8 @@
+{
+  "title": {
+    "label": "Title",
+    "placeholder": "module 1",
+    "type": "text",
+    "instructions": ""
+  }
+}

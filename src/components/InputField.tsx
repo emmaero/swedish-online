@@ -1,4 +1,3 @@
-import React from 'react'
 import iInputFields from '../interfaces/iInputFields';
 
 export default function InputField({ options, state }: iInputFields) {

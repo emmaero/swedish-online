@@ -1,0 +1,8 @@
+enum Type {
+  CREATE_COURSE = "CREATE_COURSE",
+  UPDATE_COURSE = "UPDATE_COURSE",
+  DELETE_COURSE = "DELETE_COURSE",
+  SET_COURSES = "SET_COURSES",
+}
+
+export default Type;

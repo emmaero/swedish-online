@@ -6,9 +6,12 @@
 @import "./components/nav.scss";
 @import "./components/form.scss";
 @import "./components/sign-in.scss";
+@import "./components/modal.scss";
 
 //pages
 @import "./pages/landing.scss";
+@import "./pages/user-page.scss";
 
 //particles
-@import "./particles/typography.scss"
+@import "./particles/typography.scss";
+@import "./particles/card.scss";

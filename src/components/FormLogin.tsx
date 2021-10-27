@@ -1,9 +1,9 @@
-import React, { FormEvent, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import fields from "../data/field-login.json";
 import { signIn } from '../scripts/authentification';
 import { getDocument } from '../scripts/firestore';
 import {useUser } from '../states/UserProvider';
-import {useHistory } from "react-router-dom";
+import {Link, useHistory } from "react-router-dom";
 import InputField from './InputField';
 import { useAuth } from '../states/AuthProvider';
 export default function FormLogin() {
@@ -23,12 +23,10 @@ export default function FormLogin() {
     event.preventDefault();
     setErrorMessage("");
     const account = await signIn(email, password);
- console.log("Login server ", account.isLogged);
     account.isLogged ? onSuccess(account.payload) : onFailure(account.payload);
   }
   async function onSuccess(uid: string) {
     const document = await getDocument("users", uid);
-
     setUser(document);
       setIsLogged(true);
       console.log("Login setLogged", isLogged)
@@ -47,6 +45,13 @@ export default function FormLogin() {
           Login
         </button>
       </div>
+      <Link className="button-link blue" to="/sign-up">
+        Create an account
+      </Link>
+      <br />
+      <Link className="button-link blue" to="/recover-password">
+        Recover my password
+      </Link>
     </form>
   );
 }

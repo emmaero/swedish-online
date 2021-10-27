@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 
@@ -60,4 +61,16 @@ export async function logout() {
   }
 
   return account;
+}
+export async function reset(email:string) {
+  const emailPassword = { isSent: false, payload: "" };
+  try {
+    await sendPasswordResetEmail(authInstance, email);
+    emailPassword.isSent = true;
+    emailPassword.payload = "Verification link has been sent"
+
+  } catch (error: any) {
+    emailPassword.payload = error.code;
+  }
+  return emailPassword;
 }
