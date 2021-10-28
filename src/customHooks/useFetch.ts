@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { getCollection } from "../scripts/firestore";
 
 export default function useFetch(path: string) {
@@ -21,11 +21,10 @@ export default function useFetch(path: string) {
         setError("An error occurred.");
       }
     },
-    [path]
+    []
   );
   useEffect(() => {
     fetchData(path);
-    console.log("useFetch");
   }, [fetchData]);
   return { data, loading, error };
 }

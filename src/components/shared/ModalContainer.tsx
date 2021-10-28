@@ -1,6 +1,6 @@
 import React from "react";
 import reactDom from "react-dom";
-import close from "../assets/icons/button-close.png";
+import close from "../../assets/icons/button-close.png";
 
 //@ts-ignore
 export default function ModalContainer({ state }) {

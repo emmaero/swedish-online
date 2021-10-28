@@ -1,18 +1,32 @@
-import TeacherDashboard from "../components/TeacherDashboard";
+import { useCallback, useEffect, useState } from "react";
+import TeacherDashboard from "../components/teacher/TeacherDashboard";
 import useFetch from "../customHooks/useFetch";
 import Type from "../interfaces/reducerTypes";
+import { getCollection } from "../scripts/firestore";
 import { useCourse } from "../states/CourseProvider";
 
 export default function TeacherPage() {
   const path = "courses";
-  const { data, loading, error } = useFetch(path);
+
   const { dispatch } = useCourse();
-  data && dispatch({ type: Type.SET_COURSES, payload: data });
+  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
+  const courseCallback = useCallback(async (path) => {
+    try {
+      const courses = await getCollection(path);
+      dispatch({ type: Type.SET_COURSES, payload: courses });
+      setStatus(1);
+    } catch {
+      setStatus(2);
+    }
+  }, []);
+  useEffect(() => {
+    courseCallback(path);
+  }, [courseCallback]);
   return (
     <div>
-      {loading && <p>{loading}</p>}
-      {data && <TeacherDashboard />}
-      {error && <p>{error}</p>}
+      {status === 0 && <p>Loading ...</p>}
+      {status === 1 && <TeacherDashboard />}
+      {status === 2 && <p>Error</p>}
     </div>
   );
 }

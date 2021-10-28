@@ -1,6 +1,6 @@
 import React from "react";
 import landingImage from "../assets/images/Swedish Online.png";
-import Nav from "../components/Nav";
+import Nav from "../components/shared/Nav";
 
 export default function Landing() {
   return (

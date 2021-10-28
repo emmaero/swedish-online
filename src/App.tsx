@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import Browser from './components/Browser';
+import Browser from './components/shared/Browser';
 import { getDocument } from './scripts/firestore';
 import { useAuth } from './states/AuthProvider';
 import { useUser } from './states/UserProvider';
@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     fetchUser("users", uid);
   }, [fetchUser, uid]);
-  console.log("uid: ",uid);
+ 
   
   return (
     <div className="App">

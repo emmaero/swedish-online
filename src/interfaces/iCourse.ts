@@ -1,9 +1,7 @@
 import iFileLink from "./iFileLink";
-import iVideoLink from "./iVideoLink";
+import iLesson from "./iLesson";
 
  export default interface iCourse {
    id: string;
    title: string;
-   videos: iVideoLink[];
-   files: iFileLink[];
  }

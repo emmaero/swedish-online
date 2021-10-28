@@ -1,0 +1,14 @@
+{
+  "title": {
+    "label": "Title",
+    "placeholder": "module 1",
+    "type": "text",
+    "instructions": ""
+  },
+  "videoURL": {
+    "label": "Enter video URL",
+    "placeholder": "youtube.com/hdkfeo",
+    "type": "text",
+    "instructions": ""
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import NavLogged from '../components/NavLogged'
+import NavLogged from '../components/shared/NavLogged'
 import { useUser } from '../states/UserProvider';
 
 export default function StudentPage() {

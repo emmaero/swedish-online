@@ -1,10 +1,10 @@
 import React, { FormEvent, useState } from "react";
 import InputField from "./InputField";
-import fields from "../data/field-sign-up.json";
-import { createAccount } from "../scripts/authentification";
-import { createDocumentWithId } from "../scripts/firestore";
-import { useUser } from "../states/UserProvider";
-import { useAuth } from "../states/AuthProvider";
+import fields from "../../data/field-sign-up.json";
+import { createAccount } from "../../scripts/authentification";
+import { createDocumentWithId } from "../../scripts/firestore";
+import { useUser } from "../../states/UserProvider";
+import { useAuth } from "../../states/AuthProvider";
 import { Link, useHistory } from "react-router-dom";
 
 export default function SignUp() {
