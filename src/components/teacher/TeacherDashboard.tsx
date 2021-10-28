@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CoursesInfo from "./ CoursesInfo";
-import NavLogged from "./NavLogged";
-import { useUser } from "../states/UserProvider";
-import iCourse from "../interfaces/iCourse";
-import { useCourse } from "../states/CourseProvider";
+import NavLogged from "../shared/NavLogged";
+import { useUser } from "../../states/UserProvider";
+import iCourse from "../../interfaces/iCourse";
+import { useCourse } from "../../states/CourseProvider";
 import TeacherCourseCard from "./TeacherCourseCard";
 
 interface iProp {
@@ -13,12 +13,9 @@ export default function TeacherDashboard() {
   const { user } = useUser();
   const { courses } = useCourse();
   const courseList = courses.map((item: iCourse) => (
-    <TeacherCourseCard
-      title={item.title}
-      videos={item.videos}
-      files={item.files}
-    />
+    <TeacherCourseCard key={item.id} course={item} />
   ));
+
   return (
     <div className="page-wrapper">
       <div className="page-inner">

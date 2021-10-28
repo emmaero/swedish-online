@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch } from "react-router-dom";
 //Project files
-import Logged from "../routes/Logged";
-import Unlogged from "../routes/Unlogged";
+import Logged from "../../routes/Logged";
+import Unlogged from "../../routes/Unlogged";
 
 interface iProp {
   isLogged: boolean;

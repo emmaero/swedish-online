@@ -23,7 +23,6 @@ export function AuthProvider({ children }:iProps) {
   // Methods
   useEffect(() => {
     onAuthStateChanged(authInstance, (user) => {
-      console.log("Auth User: ", user)
       if (user) setUID(user.uid);
       else setUID("no user");
     });

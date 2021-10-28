@@ -1,12 +1,11 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom';
-import { logout } from '../scripts/authentification';
-import { useAuth } from '../states/AuthProvider';
-import { useUser } from '../states/UserProvider';
+import { useHistory } from "react-router-dom";
+import { logout } from "../../scripts/authentification";
+import { useAuth } from "../../states/AuthProvider";
+import { useUser } from "../../states/UserProvider";
 
 export default function Logout() {
   // Global state
-  const { user } = useUser();
+  const { user, setUser } = useUser();
   const { setIsLogged } = useAuth();
   const history = useHistory();
 
@@ -16,6 +15,14 @@ export default function Logout() {
 
     console.log("StudentPage.jsx account", account);
     setIsLogged(false);
+    setUser({
+      id: "",
+      email: "",
+      password: "",
+      name: "",
+      city: "",
+      isTeacher: false,
+    });
     history.push("/");
   }
   return (

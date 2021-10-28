@@ -17,7 +17,7 @@ const CourseContext = createContext<iContext>({
   dispatch: () => console.warn("CourseContext used outside provider"),
 });
 export function CourseProvider({ children }: iProp) {
-    //Local state
+  //Local state
   const [courses, dispatch] = useReducer(courseReducer, initialState);
   return (
     <CourseContext.Provider value={{ courses, dispatch }}>

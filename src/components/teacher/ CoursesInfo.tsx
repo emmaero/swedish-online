@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { useCourse } from "../states/CourseProvider";
+import { useCourse } from "../../states/CourseProvider";
 import AddCourse from "./AddCourse";
-import ModalContainer from "./ModalContainer";
+import ModalContainer from "../shared/ModalContainer";
 
 export default function CoursesInfo() {
   const initialComponent: React.FC = () => <></>;
   const [showModal, setShowModal] = useState(null);
   const { courses, dispatch } = useCourse();
   function displayCourseAdd() {
-    console.log("DISPLAY MODAL");
     //@ts-ignore
     setShowModal(<AddCourse />);
   }

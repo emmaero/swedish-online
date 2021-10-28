@@ -1,17 +1,17 @@
 import { FormEvent, useState } from 'react'
-import fields from "../data/field-login.json";
-import { signIn } from '../scripts/authentification';
-import { getDocument } from '../scripts/firestore';
-import {useUser } from '../states/UserProvider';
+import fields from "../../data/field-login.json";
+import { signIn } from '../../scripts/authentification';
+import { getDocument } from '../../scripts/firestore';
+import {useUser } from '../../states/UserProvider';
 import {Link, useHistory } from "react-router-dom";
 import InputField from './InputField';
-import { useAuth } from '../states/AuthProvider';
+import { useAuth } from '../../states/AuthProvider';
 export default function FormLogin() {
   // Global state
   //@ts-ignore
   const { setUser } = useUser();
   //@ts-ignore
-  const { setIsLogged, isLogged } = useAuth();
+  const { setIsLogged} = useAuth();
 
   const history = useHistory();
 
@@ -29,7 +29,6 @@ export default function FormLogin() {
     const document = await getDocument("users", uid);
     setUser(document);
       setIsLogged(true);
-      console.log("Login setLogged", isLogged)
     history.push("/");
   }
   function onFailure(message: string) {

@@ -1,4 +1,4 @@
-import iInputFields from '../interfaces/iInputFields';
+import iInputFields from '../../interfaces/iInputFields';
 
 export default function InputField({ options, state }: iInputFields) {
   const [getter, setter] = state;

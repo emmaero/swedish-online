@@ -1,10 +1,9 @@
 import { FormEvent, useState } from "react";
-import InputField from "./InputField";
-import fields from "../data/field-course.json";
-import iCourse from "../interfaces/iCourse";
-import { createDocument } from "../scripts/firestore";
-import Type from "../interfaces/reducerTypes";
-import { useCourse } from "../states/CourseProvider";
+import InputField from "../shared/InputField";
+import fields from "../../data/field-course.json";
+import { createDocument } from "../../scripts/firestore";
+import Type from "../../interfaces/reducerTypes";
+import { useCourse } from "../../states/CourseProvider";
 
 export default function AddCourse() {
   const { courses, dispatch } = useCourse();
@@ -13,9 +12,7 @@ export default function AddCourse() {
     async function onAdd(event: FormEvent) {
         event.preventDefault();
       const courseInfo = {
-        title: title,
-        videos: [],
-        files: [],
+        title: title
       };
       const id = await createDocument("courses", courseInfo);
       const course = { ...courseInfo, id: id };

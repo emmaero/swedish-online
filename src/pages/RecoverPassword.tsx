@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
-import InputField from "../components/InputField";
+import InputField from "../components/shared/InputField";
 import fields from "../data/field-login.json";
 import { reset } from "../scripts/authentification";
 
