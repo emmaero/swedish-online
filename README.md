@@ -1,5 +1,5 @@
 # Swedish on website
-This is BBQ restaurant with multiple pages. The website contains home page, navigation links to Menu pages and contact page. The Menu page has list of categories which links to products which also contain link to product detail page
+A Learning Management System focus only on the sharing documents. 
 
 ## Setup
 
@@ -9,22 +9,25 @@ These are the instructions to run the project:
  Install the project dependencies by typing `npm install` on the terminal.
 Start the project by typing `npm start` on the terminal.
 
-## Admin page
-Enter /admin on home page to access the admin page
-
-
 ## Usage 
+A user can sign up or login if already signed up and be redirected to the platform. A teacher can only be created by the site admin which is me in the this case.
 
+## Teacher login details
+email: eduardo@mail.com
+password: password
 
 ## Dependencies
 React
 Firebase
+sass
+node-sass
+
 
 ### Requirement gathering
-[Google Docs link](https://docs.google.com/document/d/1cgW9PE5k7RdVvfwg57bgiQ1WKWxGJCrl/edit?usp=sharing&ouid=106435878026576348999&rtpof=true&sd=true)
+[Google Docs link](https://docs.google.com/document/d/1fgOfC9T0wrhsTUL8Z3rudvXn9mxNQHf3EM72GL_z6JU/edit?usp=sharing)
 ### Project spreadsheet
-[Google Spreadsheets link](https://docs.google.com/spreadsheets/d/1FhIOXBca7C_ZgFBel_i56j-yOnqYvl3BNR8AS5QYaRw/edit?usp=sharing)
+[Google Spreadsheets link](https://docs.google.com/spreadsheets/d/1yAaoNyU0r-qsHp_hT6oXUTyTuVZ7mrXpG22OjrZUHDM/edit?usp=sharing)
 ### Design mockup
-[Figma link](https://www.figma.com/file/fVU6qCTfVNUyFb6eGlGFjD/Vegan-website?node-id=1%3A2)
+[Figma link](https://www.figma.com/file/OyMDyHq1bycDm8FqC4I49N/LMS?node-id=2%3A3)
 ### Component tree
-[component tree](https://www.figma.com/file/q2YbQJYTOeLBaZDFbCZINN/BBQ-restaurant?node-id=6%3A53)
+[component tree](https://whimsical.com/lms-user-flow-6HffeX8qnHEDCs2kV3K14q)
