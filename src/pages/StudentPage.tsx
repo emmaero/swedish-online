@@ -5,6 +5,7 @@ import NavLogged from "../components/shared/NavLogged";
 import StudentDashboard from "../components/Student/StudentDashboard";
 import Type from "../interfaces/reducerTypes";
 import { useUser } from "../states/UserProvider";
+import StudentNavBar from "../components/shared/StudentNavBar";
 
 export default function StudentPage() {
   const { user } = useUser();
@@ -30,12 +31,14 @@ export default function StudentPage() {
 
   return (
     <div className="page-wrapper">
+      <StudentNavBar />
       <div className="page-inner">
-        <NavLogged />
-        <h2>Hi {user.name.toUpperCase()}</h2>
-        {status === 0 && <p>Loading ...</p>}
-        {status === 1 && <StudentDashboard />}
-        {status === 2 && <p>Error</p>}
+        <div className="main">
+          <h2>Hi {user.name.toUpperCase()}</h2>
+          {status === 0 && <p>Loading ...</p>}
+          {status === 1 && <StudentDashboard />}
+          {status === 2 && <p>Error</p>}
+        </div>
       </div>
     </div>
   );
