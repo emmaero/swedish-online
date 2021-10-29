@@ -1,5 +1,6 @@
-nav {
-  width: 100%;
+@import "../_base/variable.scss";
+.nav-wrapper {
+  position: relative;
 }
 .nav {
   width: 95%;
@@ -8,4 +9,87 @@ nav {
   justify-content: flex-end;
   position: relative;
   top: 24px;
+}
+.navbar {
+  z-index: 1;
+  position: fixed;
+  background-color: $color-white;
+  transition: width 200ms ease;
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    // align-items: center;
+    height: 100%;
+    .nav-item {
+      transition: width 200ms ease;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      color: $color-main;
+      text-decoration: none;
+
+      svg {
+        width: 32px;
+        min-width: 32px;
+        margin: 0 24px;
+      }
+    }
+    .link-text {
+      display: none;
+      margin-left: 16px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 100vw;
+    height: 80px;
+    .navbar-nav {
+      flex-direction: row;
+    }
+    .nav-item:last-child {
+      margin-left: auto;
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .nav-link {
+      justify-content: center;
+    }
+  }
+}
+@media (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 80px;
+    height: 100vh;
+    .navbar-nav {
+      flex-direction: column;
+    }
+    .nav-item:last-child {
+      margin-top: auto;
+      margin-bottom: 32px;
+    }
+  }
+  .navbar:hover {
+    width: 240px;
+  }
+  .navbar:hover {
+    .link-text {
+      display: block;
+    }
+    .nav-item :hover {
+      background-color: $color-main;
+      color: $color-white;
+    }
+  }
 }
