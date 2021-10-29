@@ -26,13 +26,13 @@ export default function UpdateLessonForm({ lesson, setModal }: iProp) {
       youtubeURL: videoURL,
       fileURL: fileURL,
     };
-      await updateDocument(path, id, lessonInfo);
-      alert("Updated successfully");
-      setModal(null);
+    await updateDocument(path, id, lessonInfo);
+    alert("Updated successfully");
+    setModal(null);
   }
   return (
     <form>
-      <h2>Add Course</h2>
+      <h2>Update Lesson</h2>
       <InputField state={[title, setTitle]} options={fields.title} />
       <InputField state={[videoURL, setVideoURL]} options={fields.videoURL} />
       <FileUploader folder="Lectures" name={title} hook={[setFileURL]} />

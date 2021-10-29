@@ -7,19 +7,26 @@ type PropParams = {
   courseId: string;
 };
 export default function StudentCourseList() {
-        const { courseId } = useParams<PropParams>();
-        const path = `courses/${courseId}/lesson`;
-        const { data } = useFetch(path);
-        const history = useHistory();
- return (
-   <div className="page-wrapper">
-     <div className="page-inner">
-       <button onClick={() => history.goBack()} className="btn button-main">
-         Back
-       </button>
-       <h2>Lessons</h2>
-       <ListComponent list={data} ComponentList={StudentLessonItem} />
-     </div>
-   </div>
- );
+  const { courseId } = useParams<PropParams>();
+  const path = `courses/${courseId}/lesson`;
+  const { data } = useFetch(path);
+  const history = useHistory();
+
+  const lessons =
+    data.length > 0 ? (
+      <ListComponent list={data} ComponentList={StudentLessonItem} />
+    ) : (
+      <h3>There are no lessons for this course yet. Contact the teacher"</h3>
+    );
+  return (
+    <div className="page-wrapper">
+      <div className="page-inner">
+        <button onClick={() => history.goBack()} className="btn button-main">
+          Back
+        </button>
+        <h2>Lessons</h2>
+        {lessons}
+      </div>
+    </div>
+  );
 }

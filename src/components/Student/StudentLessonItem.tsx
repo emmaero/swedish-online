@@ -10,7 +10,7 @@ export default function StudentLessonItem({ item }: iProp) {
   return (
     <div className="card-secondary">
       <div className="top">
-        <h2>{title}</h2>
+        <h3>{title}</h3>
       </div>
       <div className="card-body">
         <a href={fileURL} target="_blank" rel="noopener noreferrer">

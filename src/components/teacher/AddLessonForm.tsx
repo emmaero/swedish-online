@@ -27,7 +27,7 @@ export default function AddLessonForm({ id, setModal }: iProp) {
   }
   return (
     <form>
-      <h2>Add Course</h2>
+      <h2>Add Lesson</h2>
       <InputField state={[title, setTitle]} options={fields.title} />
       <InputField state={[videoURL, setVideoURL]} options={fields.videoURL} />
       <FileUploader folder="Lectures" name={title} hook={[setFileURL]} />
