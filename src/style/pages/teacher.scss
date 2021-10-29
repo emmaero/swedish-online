@@ -1,0 +1,10 @@
+.overview {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 920px) {
+  .overview {
+    display: flex;
+    flex-direction: row;
+  }
+}

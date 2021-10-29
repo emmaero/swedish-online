@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import TeacherDashboard from "../components/teacher/TeacherDashboard";
-import useFetch from "../customHooks/useFetch";
 import Type from "../interfaces/reducerTypes";
 import { getCollection } from "../scripts/firestore";
 import { useCourse } from "../states/CourseProvider";
@@ -14,11 +13,11 @@ export default function TeacherPage() {
     try {
       const courses = await getCollection(path);
       dispatch({ type: Type.SET_COURSES, payload: courses });
-      setStatus(1);
+      setStatus(1);     
     } catch {
       setStatus(2);
     }
-  }, []);
+  }, [dispatch]);
   useEffect(() => {
     courseCallback(path);
   }, [courseCallback]);

@@ -11,7 +11,7 @@ export default function useFetch(path: string) {
       //@ts-ignore
       setLoading("loading...");
       try {
-        const fetchData = await getCollection(path);
+        const fetchData = await getCollection(path); 
         //@ts-ignore
         setData(fetchData);
         //@ts-ignore
@@ -25,6 +25,6 @@ export default function useFetch(path: string) {
   );
   useEffect(() => {
     fetchData(path);
-  }, [fetchData]);
+  }, [fetchData,path]);
   return { data, loading, error };
 }

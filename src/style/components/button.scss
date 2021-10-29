@@ -1,10 +1,11 @@
 @import "../_base/variable.scss";
 .btn {
   font-size: 15px;
-  $height: 44px;
+  height: 44px;
   cursor: pointer;
   border-radius: 10px;
   margin: 0 8px;
+ padding: $space-small;
 }
 .red {
   color: $color-red;
@@ -20,13 +21,13 @@
   cursor: pointer;
 }
 .button-main {
-  padding: $space-small;
+
   border: 2px solid $color-black;
   background-color: transparent;
   min-width: 96px;
 }
 .button-secondary {
-  padding: $space-small;
+ 
   border: 2px solid $color-black;
   background-color: $color-black;
   color: $color-main-light;

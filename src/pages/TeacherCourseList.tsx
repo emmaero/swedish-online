@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import ListComponent from "../components/shared/ListComponent";
 import useFetch from "../customHooks/useFetch";
 import TeacherLessonItem from "../components/teacher/TeacherLessonItem";
@@ -10,11 +10,12 @@ export default function TeacherCourseList() {
     const { courseId } = useParams<PropParams>();
     const path = `courses/${courseId}/lesson`;
     const { data } = useFetch(path);
+    const history = useHistory();
   return (
     <div className="page-wrapper">
-      <div className="page-inner">
+          <div className="page-inner">
+              <button onClick={()=>history.goBack()} className="btn button-main">Back</button>
               <h2>Lessons</h2>
-              <h3>{ data.length}</h3>
         <ListComponent list={data} ComponentList={TeacherLessonItem} />
       </div>
     </div>

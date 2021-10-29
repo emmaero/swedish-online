@@ -6,7 +6,7 @@ import Type from "../../interfaces/reducerTypes";
 import { useCourse } from "../../states/CourseProvider";
 
 export default function AddCourse() {
-  const { courses, dispatch } = useCourse();
+  const { dispatch } = useCourse();
   const [title, setTitle] = useState("");
  
     async function onAdd(event: FormEvent) {

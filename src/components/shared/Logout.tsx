@@ -5,7 +5,7 @@ import { useUser } from "../../states/UserProvider";
 
 export default function Logout() {
   // Global state
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
   const { setIsLogged } = useAuth();
   const history = useHistory();
 
@@ -15,14 +15,7 @@ export default function Logout() {
 
     console.log("StudentPage.jsx account", account);
     setIsLogged(false);
-    setUser({
-      id: "",
-      email: "",
-      password: "",
-      name: "",
-      city: "",
-      isTeacher: false,
-    });
+    setUser(null);
     history.push("/");
   }
   return (

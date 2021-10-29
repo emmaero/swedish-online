@@ -18,7 +18,6 @@ export default function SignUp() {
   const [city, setCity] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [loading, setLoading] = useState(false);
   // Methods
   async function onSubmit(event: FormEvent) {
     event.preventDefault();
@@ -34,11 +33,9 @@ export default function SignUp() {
       city: city,
       isTeacher: false,
     };
-    setLoading(true);
     await createDocumentWithId("users", uid, newUser);
     setUser(newUser);
     setIsLogged(true);
-    setLoading(false);
     history.push("/");
   }
   function onFailure(message: string) {
