@@ -10,20 +10,20 @@ interface iProp {
   setModal: Dispatch<SetStateAction<any>>;
 }
 export default function UpdateCourse({ course, setModal }: iProp) {
-  const { id, title:name } = course;
+  const { id, title: name } = course;
   const { dispatch } = useCourse();
   const [title, setTitle] = useState(name);
   async function onUpdate(event: FormEvent) {
     event.preventDefault();
-    const courseInfo = {...course,title: title,id:id};
- await updateDocument("courses",id, courseInfo);
+    const courseInfo = { ...course, title: title, id: id };
+    await updateDocument("courses", id, courseInfo);
     dispatch({ type: Type.UPDATE_COURSE, payload: courseInfo });
     alert("Course update");
     setModal(null);
   }
   return (
     <form>
-      <h2>Add Course</h2>
+      <h2>Edit Course</h2>
       <InputField state={[title, setTitle]} options={fields.title} />
       <button onClick={onUpdate} className="btn button-secondary">
         Add Course
