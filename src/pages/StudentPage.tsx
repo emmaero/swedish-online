@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useCourse } from "../states/CourseProvider";
 import { getCollection } from "../scripts/firestore";
-import NavLogged from "../components/shared/NavLogged";
 import StudentDashboard from "../components/Student/StudentDashboard";
 import Type from "../interfaces/reducerTypes";
 import { useUser } from "../states/UserProvider";

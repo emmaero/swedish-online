@@ -5,7 +5,7 @@
   cursor: pointer;
   border-radius: 10px;
   margin: 0 8px;
- padding: $space-small;
+  padding: $space-small;
 }
 .red {
   color: $color-red;
@@ -21,15 +21,28 @@
   cursor: pointer;
 }
 .button-main {
-
   border: 2px solid $color-black;
   background-color: transparent;
   min-width: 96px;
+  transition: 200ms;
+}
+.button-main:hover {
+  border: 2px solid $color-black;
+  background-color: $color-black;
+  color: $color-white;
+  min-width: 96px;
 }
 .button-secondary {
- 
   border: 2px solid $color-black;
   background-color: $color-black;
   color: $color-main-light;
   min-width: 96px;
+  transition: 200ms;
+}
+.button-secondary:hover {
+  border: 2px solid $color-black;
+  background-color: transparent;
+  color: $color-black;
+
+  transition: 200ms;
 }
