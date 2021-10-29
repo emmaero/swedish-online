@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import InputField from "../shared/InputField";
 import fields from "../../data/field-lesson.json";
 import { createDocument } from "../../scripts/firestore";
@@ -6,8 +6,9 @@ import FileUploader from "../shared/ImageUploader";
 
 interface iProp {
   id: string;
+  setModal: Dispatch<SetStateAction<any>>;
 }
-export default function AddLessonForm({ id }: iProp) {
+export default function AddLessonForm({ id, setModal }: iProp) {
   const [title, setTitle] = useState("");
   const [videoURL, setVideoURL] = useState("");
   const [fileURL, setFileURL] = useState("");
@@ -15,13 +16,14 @@ export default function AddLessonForm({ id }: iProp) {
   const path = `courses/${id}/lesson`;
   async function onAdd(event: FormEvent) {
     event.preventDefault();
-    const videoInfo = {
+    const lesson = {
       title: title,
       youtubeURL: videoURL,
       fileURL: fileURL,
     };
-    await createDocument(path, videoInfo);
-    alert("video add");
+    await createDocument(path, lesson);
+    alert("Lesson added");
+    setModal(null);
   }
   return (
     <form>

@@ -1,7 +1,13 @@
 .card {
+  &.medium {
+    height: 200px;
+    width: 280px;
+  }
+  &.large {
+    height: 200px;
+    width: 280px;
+  }
   background-color: $color-white;
-  height: 200px;
-  width: 280px;
   border-radius: 10px;
   padding: 8px;
   position: relative;
@@ -23,15 +29,49 @@
     display: flex;
     height: 100%;
     flex-direction: column;
-    position: relative;
-    button {
-      align-self: center;
-      justify-self: center;
-      margin: auto;
-      bottom: 8px;
-    }
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
   }
   .link {
     text-decoration: underline;
+  }
+}
+.card-secondary {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+  height: 144px;
+  justify-content: space-between;
+  width: 90%;
+  margin: 8px auto;
+  padding: 8px;
+  border-radius: 10px;
+  max-width: 761px;
+  & div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  a {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+@media (min-width: 920px) {
+  .card {
+    &.medium {
+      height: 200px;
+      width: 280px;
+    }
+    &.large {
+      height: 304px;
+      width: 400px;
+    }
   }
 }

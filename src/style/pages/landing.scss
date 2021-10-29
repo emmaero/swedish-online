@@ -37,11 +37,11 @@
 @media (min-width: 920px) {
   .page-wrapper {
     position: absolute;
-    height: 100vh;
+    min-height: 100vh;
     background-color: $color-main;
     .page-inner {
       width: 90%;
-      height: 90vh;
+      min-height: 90vh;
       margin: auto;
       max-width: 1293px;
       top: 32px;

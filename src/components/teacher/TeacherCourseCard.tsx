@@ -11,17 +11,16 @@ interface iProp {
 }
 export default function TeacherCourseCard({ course }: iProp) {
   const { id, title } = course;
-  const initialComponent: React.FC = () => <></>;
   const path = `courses/${id}/lesson`;
   const { data} = useFetch(path);
   const [showModal, setShowModal] = useState(null);
   function displayLessonForm() {
     //@ts-ignore
-    setShowModal(<AddLessonForm id={id} />);
+    setShowModal(<AddLessonForm id={id} setModal={ setShowModal}/>);
   }
   function displayLessonEditForm() {
     //@ts-ignore
-    setShowModal(<UpdateCourse course={course} />);
+    setShowModal(<UpdateCourse course={course} setModal={setShowModal}/>);
   }
   return (
     <div className="card medium">
@@ -38,7 +37,7 @@ export default function TeacherCourseCard({ course }: iProp) {
           Add Lesson
         </button>
         <button onClick={displayLessonEditForm} className="btn button-main">
-          Update Lesson
+          Update Course
         </button>
       </div>
       <ModalContainer state={[showModal, setShowModal]} />
