@@ -25,6 +25,7 @@ function updateCourse(state: iCourse[], action: Action) {
   return newState;
 }
 
+// Nice validations (not everyone include them)
 function setCourses(state: iCourse[], action: Action) {
   const { payload } = action;
   const newCourses: iCourse[] = payload as iCourse[];
@@ -33,6 +34,7 @@ function setCourses(state: iCourse[], action: Action) {
   return state;
 }
 
+// Nice validations (not everyone include them)
 function createCourse(state: iCourse[], action: Action) {
   const { payload } = action;
   const course = payload as iCourse;

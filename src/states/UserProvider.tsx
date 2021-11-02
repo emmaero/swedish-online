@@ -14,17 +14,17 @@ const UserContext = createContext({
 export function UserProvider({ children }: iProps) {
   // Local state
   const [user, setUser] = useState<iUser>({
-    id:"",
+    id: "",
     email: "",
     password: "",
     name: "",
     city: "",
-    isTeacher: false
+    isTeacher: false,
   });
 
-    return (
-      //@ts-ignore
-    <UserContext.Provider value={{ user, setUser}}>
+  return (
+    //@ts-ignore
+    <UserContext.Provider value={{ user, setUser }}>
       {children}
     </UserContext.Provider>
   );
