@@ -17,8 +17,8 @@ export default function Landing() {
             <p>
               Improve your swedish in the comfort of your home. All you need is
               a smart phone or a laptop with an internet connection.
-                      </p>
-                      <button className="btn button-secondary">Get started</button>
+            </p>
+            <button className="btn button-secondary">Get started</button>
           </div>
         </div>
       </div>

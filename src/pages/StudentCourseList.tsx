@@ -12,12 +12,15 @@ export default function StudentCourseList() {
   const { data } = useFetch(path);
   const history = useHistory();
 
-  const lessons =
-    data.length > 0 ? (
-      <ListComponent list={data} ComponentList={StudentLessonItem} />
-    ) : (
-      <h3>There are no lessons for this course yet. Contact the teacher"</h3>
-    );
+  // Nesting
+  // If Prettier moves your code into 6 vertical lines it means we need to fix it.
+  // In this case if ListComponent has a prop called ComponentList (same name but reversed) is a clue to where to start...
+
+  // Here is an example on how to tackle it:
+  const Error = "There are no lessons for this course yet. Contact the teacher";
+  const StudyItems = <List list={data} component={StudentLessonItem} />; // noticed that i can rename ListComponent to List and renamed the prop to just component
+  const lessons = data.length > 0 ? StudyItems : <p>Error</p>;
+
   return (
     <div className="page-wrapper">
       <div className="page-inner">

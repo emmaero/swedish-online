@@ -1,11 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import Browser from './components/shared/Browser';
-import { getDocument } from './scripts/firestore';
-import { useAuth } from './states/AuthProvider';
-import { useUser } from './states/UserProvider';
+import React, { useCallback, useEffect, useState } from "react";
+import Browser from "./components/shared/Browser";
+import { getDocument } from "./scripts/firestore";
+import { useAuth } from "./states/AuthProvider";
+import { useUser } from "./states/UserProvider";
 
-import "./style/style.scss"
+import "./style/style.scss";
 
+// this can be exported from here...
 function App() {
   // Global state
   //@ts-ignore
@@ -35,8 +36,7 @@ function App() {
   useEffect(() => {
     fetchUser("users", uid);
   }, [fetchUser, uid]);
- 
-  
+
   return (
     <div className="App">
       {status === 0 && <p>loading</p>}

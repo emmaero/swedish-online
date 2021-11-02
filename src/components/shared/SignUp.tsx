@@ -12,12 +12,14 @@ export default function SignUp() {
   const { setUser } = useUser();
   const { setIsLogged } = useAuth();
   const history = useHistory();
+
   // Local state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
   // Methods
   async function onSubmit(event: FormEvent) {
     event.preventDefault();
@@ -26,6 +28,7 @@ export default function SignUp() {
     //@ts-ignore
     account.isCreated ? onAddItem(account.payload) : onFailure(account.payload);
   }
+
   async function onAddItem(uid: string) {
     const newUser = {
       name: name,
@@ -33,14 +36,17 @@ export default function SignUp() {
       city: city,
       isTeacher: false,
     };
+
     await createDocumentWithId("users", uid, newUser);
     setUser(newUser);
     setIsLogged(true);
     history.push("/");
   }
+
   function onFailure(message: string) {
     setErrorMessage(message);
   }
+
   return (
     <form onSubmit={onSubmit}>
       <InputField state={[name, setName]} options={fields.name} />

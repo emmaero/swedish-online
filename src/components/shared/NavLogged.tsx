@@ -1,4 +1,3 @@
-
 import Logout from "./Logout";
 
 export default function NavLogged() {

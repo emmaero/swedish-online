@@ -2,6 +2,8 @@ import Calendar from "./icons/Calendar";
 import Slack from "./icons/Slack";
 import Logout from "./Logout";
 
+// Refactor -1
+// Even if is less than 50 lines of code, this looks messy.
 export default function StudentNavBar() {
   return (
     <nav className="navbar">

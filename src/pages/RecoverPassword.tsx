@@ -15,6 +15,7 @@ export default function RecoverPassword() {
     event.preventDefault();
     setMessage("");
     const emailPassword = await reset(email);
+    
     setMessage(emailPassword.payload);
   }
 

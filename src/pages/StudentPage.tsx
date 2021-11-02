@@ -24,6 +24,7 @@ export default function StudentPage() {
     },
     [dispatch]
   );
+
   useEffect(() => {
     courseCallback(path);
   }, [courseCallback]);
